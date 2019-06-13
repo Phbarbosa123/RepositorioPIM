@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UriQui));
             this.txbUrioquiobs = new System.Windows.Forms.TextBox();
+            this.uriquiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.txbraca = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,15 +63,29 @@
             this.Label18 = new System.Windows.Forms.Label();
             this.Label19 = new System.Windows.Forms.Label();
             this.Label20 = new System.Windows.Forms.Label();
+            this.uriquiTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.uriquiTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.uriquiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txbUrioquiobs
             // 
+            this.txbUrioquiobs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "obs", true));
             this.txbUrioquiobs.Location = new System.Drawing.Point(91, 304);
             this.txbUrioquiobs.Multiline = true;
             this.txbUrioquiobs.Name = "txbUrioquiobs";
             this.txbUrioquiobs.Size = new System.Drawing.Size(339, 35);
             this.txbUrioquiobs.TabIndex = 278;
+            // 
+            // uriquiBindingSource
+            // 
+            this.uriquiBindingSource.DataMember = "uriqui";
+            this.uriquiBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
@@ -82,6 +99,7 @@
             // 
             // txbraca
             // 
+            this.txbraca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "raca", true));
             this.txbraca.Location = new System.Drawing.Point(357, 98);
             this.txbraca.Name = "txbraca";
             this.txbraca.Size = new System.Drawing.Size(73, 20);
@@ -110,6 +128,7 @@
             // 
             // mskresp
             // 
+            this.mskresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "cpf", true));
             this.mskresp.Location = new System.Drawing.Point(213, 95);
             this.mskresp.Mask = "000.000.000-00";
             this.mskresp.Name = "mskresp";
@@ -128,6 +147,7 @@
             // 
             // mskdata
             // 
+            this.mskdata.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "data", true));
             this.mskdata.Location = new System.Drawing.Point(105, 95);
             this.mskdata.Mask = "00/00/0000";
             this.mskdata.Name = "mskdata";
@@ -137,6 +157,7 @@
             // 
             // txtresp
             // 
+            this.txtresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "responsavel", true));
             this.txtresp.Location = new System.Drawing.Point(381, 368);
             this.txtresp.Name = "txtresp";
             this.txtresp.Size = new System.Drawing.Size(73, 20);
@@ -144,6 +165,7 @@
             // 
             // txtnome
             // 
+            this.txtnome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "nome", true));
             this.txtnome.Location = new System.Drawing.Point(105, 62);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(325, 20);
@@ -159,6 +181,7 @@
             this.Label3.Size = new System.Drawing.Size(120, 31);
             this.Label3.TabIndex = 261;
             this.Label3.Text = "Urinálise";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Label4
             // 
@@ -189,6 +212,7 @@
             this.Label1.Size = new System.Drawing.Size(38, 13);
             this.Label1.TabIndex = 258;
             this.Label1.Text = "Nome:";
+            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // btnsalvar
             // 
@@ -200,9 +224,11 @@
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // txbBIL
             // 
+            this.txbBIL.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "bil", true));
             this.txbBIL.Location = new System.Drawing.Point(304, 172);
             this.txbBIL.Multiline = true;
             this.txbBIL.Name = "txbBIL";
@@ -211,6 +237,7 @@
             // 
             // txbURO
             // 
+            this.txbURO.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "uro", true));
             this.txbURO.Location = new System.Drawing.Point(204, 250);
             this.txbURO.Multiline = true;
             this.txbURO.Name = "txbURO";
@@ -219,6 +246,7 @@
             // 
             // txbGLI
             // 
+            this.txbGLI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "gli", true));
             this.txbGLI.Location = new System.Drawing.Point(204, 224);
             this.txbGLI.Multiline = true;
             this.txbGLI.Name = "txbGLI";
@@ -227,6 +255,7 @@
             // 
             // txbPT
             // 
+            this.txbPT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "pt", true));
             this.txbPT.Location = new System.Drawing.Point(204, 198);
             this.txbPT.Multiline = true;
             this.txbPT.Name = "txbPT";
@@ -235,6 +264,7 @@
             // 
             // txbPH
             // 
+            this.txbPH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "ph", true));
             this.txbPH.Location = new System.Drawing.Point(204, 172);
             this.txbPH.Multiline = true;
             this.txbPH.Name = "txbPH";
@@ -294,6 +324,7 @@
             // 
             // txbNIT
             // 
+            this.txbNIT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "nit", true));
             this.txbNIT.Location = new System.Drawing.Point(304, 250);
             this.txbNIT.Multiline = true;
             this.txbNIT.Name = "txbNIT";
@@ -302,6 +333,7 @@
             // 
             // txbHB
             // 
+            this.txbHB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "hb", true));
             this.txbHB.Location = new System.Drawing.Point(304, 224);
             this.txbHB.Multiline = true;
             this.txbHB.Name = "txbHB";
@@ -310,6 +342,7 @@
             // 
             // txbCET
             // 
+            this.txbCET.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uriquiBindingSource, "cet", true));
             this.txbCET.Location = new System.Drawing.Point(304, 198);
             this.txbCET.Multiline = true;
             this.txbCET.Name = "txbCET";
@@ -345,6 +378,10 @@
             this.Label20.Size = new System.Drawing.Size(28, 13);
             this.Label20.TabIndex = 289;
             this.Label20.Text = "CET";
+            // 
+            // uriquiTableAdapter
+            // 
+            this.uriquiTableAdapter.ClearBeforeFill = true;
             // 
             // UriQui
             // 
@@ -386,6 +423,11 @@
             this.Controls.Add(this.Label1);
             this.Name = "UriQui";
             this.Text = "UriQui";
+            this.Load += new System.EventHandler(this.UriQui_Load);
+            this.Click += new System.EventHandler(this.Label1_Click);
+            this.DoubleClick += new System.EventHandler(this.Label3_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.uriquiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,5 +466,8 @@
         internal System.Windows.Forms.Label Label18;
         internal System.Windows.Forms.Label Label19;
         internal System.Windows.Forms.Label Label20;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource uriquiBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.uriquiTableAdapter uriquiTableAdapter;
     }
 }

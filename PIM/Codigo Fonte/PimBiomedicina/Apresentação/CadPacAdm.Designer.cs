@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadPacAdm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtnome = new System.Windows.Forms.TextBox();
+            this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
             this.txtcidade = new System.Windows.Forms.TextBox();
             this.txtidade = new System.Windows.Forms.TextBox();
             this.txtbairro = new System.Windows.Forms.TextBox();
@@ -64,7 +67,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtresp = new System.Windows.Forms.TextBox();
-            this.cmbestado = new System.Windows.Forms.ComboBox();
+            this.pacienteTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.pacienteTableAdapter();
+            this.txtestado = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +136,8 @@
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Cidade:";
+            this.label7.Click += new System.EventHandler(this.label1_Click);
+            this.label7.DoubleClick += new System.EventHandler(this.label15_Click);
             // 
             // label8
             // 
@@ -164,13 +172,25 @@
             // 
             // txtnome
             // 
+            this.txtnome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "nome", true));
             this.txtnome.Location = new System.Drawing.Point(78, 87);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(472, 20);
             this.txtnome.TabIndex = 10;
             // 
+            // pacienteBindingSource
+            // 
+            this.pacienteBindingSource.DataMember = "paciente";
+            this.pacienteBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtcidade
             // 
+            this.txtcidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "cidade", true));
             this.txtcidade.Location = new System.Drawing.Point(301, 237);
             this.txtcidade.Name = "txtcidade";
             this.txtcidade.Size = new System.Drawing.Size(148, 20);
@@ -178,6 +198,7 @@
             // 
             // txtidade
             // 
+            this.txtidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "idade", true));
             this.txtidade.Location = new System.Drawing.Point(523, 121);
             this.txtidade.Name = "txtidade";
             this.txtidade.Size = new System.Drawing.Size(27, 20);
@@ -185,6 +206,7 @@
             // 
             // txtbairro
             // 
+            this.txtbairro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "bairro", true));
             this.txtbairro.Location = new System.Drawing.Point(78, 237);
             this.txtbairro.Name = "txtbairro";
             this.txtbairro.Size = new System.Drawing.Size(176, 20);
@@ -237,6 +259,7 @@
             // 
             // txtcomplemento
             // 
+            this.txtcomplemento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "complemento", true));
             this.txtcomplemento.Location = new System.Drawing.Point(450, 197);
             this.txtcomplemento.Name = "txtcomplemento";
             this.txtcomplemento.Size = new System.Drawing.Size(100, 20);
@@ -245,6 +268,7 @@
             // 
             // txtrua
             // 
+            this.txtrua.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "rua", true));
             this.txtrua.Location = new System.Drawing.Point(78, 197);
             this.txtrua.Name = "txtrua";
             this.txtrua.Size = new System.Drawing.Size(227, 20);
@@ -252,6 +276,7 @@
             // 
             // txtnum
             // 
+            this.txtnum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "numero", true));
             this.txtnum.Location = new System.Drawing.Point(330, 197);
             this.txtnum.Name = "txtnum";
             this.txtnum.Size = new System.Drawing.Size(39, 20);
@@ -281,6 +306,7 @@
             // 
             // mskrg
             // 
+            this.mskrg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "rg", true));
             this.mskrg.Location = new System.Drawing.Point(78, 125);
             this.mskrg.Mask = "99.999.999-9";
             this.mskrg.Name = "mskrg";
@@ -289,6 +315,7 @@
             // 
             // mskcpf
             // 
+            this.mskcpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "cpf", true));
             this.mskcpf.Location = new System.Drawing.Point(204, 125);
             this.mskcpf.Mask = "999.999.999-99";
             this.mskcpf.Name = "mskcpf";
@@ -307,6 +334,7 @@
             // 
             // msktel
             // 
+            this.msktel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "telefone", true));
             this.msktel.Location = new System.Drawing.Point(78, 162);
             this.msktel.Mask = "(99)9999-9999";
             this.msktel.Name = "msktel";
@@ -315,6 +343,7 @@
             // 
             // mskcel
             // 
+            this.mskcel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "celular", true));
             this.mskcel.Location = new System.Drawing.Point(253, 162);
             this.mskcel.Mask = "(99)9 9999-9999";
             this.mskcel.Name = "mskcel";
@@ -333,6 +362,7 @@
             // 
             // mskdatanasc
             // 
+            this.mskdatanasc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "datanasc", true));
             this.mskdatanasc.Location = new System.Drawing.Point(405, 121);
             this.mskdatanasc.Mask = "00/00/0000";
             this.mskdatanasc.Name = "mskdatanasc";
@@ -342,6 +372,7 @@
             // 
             // txtobs
             // 
+            this.txtobs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "obs", true));
             this.txtobs.Location = new System.Drawing.Point(119, 282);
             this.txtobs.Multiline = true;
             this.txtobs.Name = "txtobs";
@@ -358,6 +389,7 @@
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // btnalterar
             // 
@@ -369,6 +401,7 @@
             this.btnalterar.Text = "Alterar";
             this.btnalterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.btnalterar_Click);
             // 
             // label15
             // 
@@ -380,6 +413,8 @@
             this.label15.Size = new System.Drawing.Size(247, 31);
             this.label15.TabIndex = 34;
             this.label15.Text = "Cadastrar Paciente";
+            this.label15.Click += new System.EventHandler(this.label1_Click);
+            this.label15.DoubleClick += new System.EventHandler(this.label15_Click);
             // 
             // label16
             // 
@@ -390,49 +425,28 @@
             this.label16.Size = new System.Drawing.Size(72, 13);
             this.label16.TabIndex = 35;
             this.label16.Text = "Responsável:";
+            this.label16.Click += new System.EventHandler(this.label1_Click);
+            this.label16.DoubleClick += new System.EventHandler(this.label16_Click);
             // 
             // txtresp
             // 
+            this.txtresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "responsavel", true));
             this.txtresp.Location = new System.Drawing.Point(375, 345);
             this.txtresp.Name = "txtresp";
             this.txtresp.Size = new System.Drawing.Size(176, 20);
             this.txtresp.TabIndex = 36;
             // 
-            // cmbestado
+            // pacienteTableAdapter
             // 
-            this.cmbestado.FormattingEnabled = true;
-            this.cmbestado.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AP",
-            "AM",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MT",
-            "MS",
-            "MG",
-            "PA",
-            "PB",
-            "PR",
-            "PE",
-            "PI",
-            "RJ",
-            "RN",
-            "RS",
-            "RO",
-            "RR",
-            "SC",
-            "SP",
-            "SE",
-            "TO"});
-            this.cmbestado.Location = new System.Drawing.Point(504, 236);
-            this.cmbestado.Name = "cmbestado";
-            this.cmbestado.Size = new System.Drawing.Size(47, 21);
-            this.cmbestado.TabIndex = 37;
+            this.pacienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtestado
+            // 
+            this.txtestado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacienteBindingSource, "estado", true));
+            this.txtestado.Location = new System.Drawing.Point(501, 237);
+            this.txtestado.Name = "txtestado";
+            this.txtestado.Size = new System.Drawing.Size(39, 20);
+            this.txtestado.TabIndex = 38;
             // 
             // CadPacAdm
             // 
@@ -441,7 +455,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(602, 463);
-            this.Controls.Add(this.cmbestado);
+            this.Controls.Add(this.txtestado);
             this.Controls.Add(this.txtresp);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -478,6 +492,9 @@
             this.Name = "CadPacAdm";
             this.Text = "CadPacAdm";
             this.Load += new System.EventHandler(this.CadPacAdm_Load);
+            this.Click += new System.EventHandler(this.label15_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -522,6 +539,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtresp;
-        private System.Windows.Forms.ComboBox cmbestado;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource pacienteBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.pacienteTableAdapter pacienteTableAdapter;
+        private System.Windows.Forms.TextBox txtestado;
     }
 }

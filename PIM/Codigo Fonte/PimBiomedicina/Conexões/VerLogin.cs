@@ -14,7 +14,7 @@ namespace PimBiomedicina.Conexões
         Conexão con = new Conexão();
         SqlDataReader dr;
 
-        public bool verificarLogin(String usuario, String senha)
+        public bool verificarLogin (String usuario, String senha)
         {
             cmd.CommandText = "select * from logins where usuario = @usuario and senha = @senha";
             cmd.Parameters.AddWithValue("@usuario", usuario);

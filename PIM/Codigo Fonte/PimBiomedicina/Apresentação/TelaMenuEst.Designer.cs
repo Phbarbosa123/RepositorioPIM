@@ -41,6 +41,9 @@
             this.químicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sedimentoscopiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.hematologiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hematologiaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.microbiologiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +111,10 @@
             // tsmExames
             // 
             this.tsmExames.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.urináliseToolStripMenuItem});
+            this.urináliseToolStripMenuItem,
+            this.hematologiaToolStripMenuItem,
+            this.hematologiaToolStripMenuItem1,
+            this.microbiologiaToolStripMenuItem});
             this.tsmExames.Image = ((System.Drawing.Image)(resources.GetObject("tsmExames.Image")));
             this.tsmExames.Name = "tsmExames";
             this.tsmExames.Size = new System.Drawing.Size(74, 20);
@@ -136,12 +142,14 @@
             this.químicoToolStripMenuItem.Name = "químicoToolStripMenuItem";
             this.químicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.químicoToolStripMenuItem.Text = "Químico";
+            this.químicoToolStripMenuItem.Click += new System.EventHandler(this.químicoToolStripMenuItem_Click);
             // 
             // sedimentoscopiaToolStripMenuItem
             // 
             this.sedimentoscopiaToolStripMenuItem.Name = "sedimentoscopiaToolStripMenuItem";
             this.sedimentoscopiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sedimentoscopiaToolStripMenuItem.Text = "Sedimentoscopia";
+            this.sedimentoscopiaToolStripMenuItem.Click += new System.EventHandler(this.sedimentoscopiaToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -152,6 +160,28 @@
             this.button1.Size = new System.Drawing.Size(61, 23);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // hematologiaToolStripMenuItem
+            // 
+            this.hematologiaToolStripMenuItem.Name = "hematologiaToolStripMenuItem";
+            this.hematologiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hematologiaToolStripMenuItem.Text = "Bioquímica";
+            this.hematologiaToolStripMenuItem.Click += new System.EventHandler(this.hematologiaToolStripMenuItem_Click);
+            // 
+            // hematologiaToolStripMenuItem1
+            // 
+            this.hematologiaToolStripMenuItem1.Name = "hematologiaToolStripMenuItem1";
+            this.hematologiaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.hematologiaToolStripMenuItem1.Text = "Hematologia";
+            this.hematologiaToolStripMenuItem1.Click += new System.EventHandler(this.hematologiaToolStripMenuItem1_Click);
+            // 
+            // microbiologiaToolStripMenuItem
+            // 
+            this.microbiologiaToolStripMenuItem.Name = "microbiologiaToolStripMenuItem";
+            this.microbiologiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.microbiologiaToolStripMenuItem.Text = "Microbiologia";
+            this.microbiologiaToolStripMenuItem.Click += new System.EventHandler(this.microbiologiaToolStripMenuItem_Click);
             // 
             // TelaMenuEst
             // 
@@ -186,5 +216,8 @@
         private System.Windows.Forms.ToolStripMenuItem físicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem químicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sedimentoscopiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hematologiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hematologiaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem microbiologiaToolStripMenuItem;
     }
 }

@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UriSed));
             this.txbOutrosCristais = new System.Windows.Forms.TextBox();
+            this.urisedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
             this.txbRaca = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,18 +73,33 @@
             this.ckbOutrosCilindros = new System.Windows.Forms.CheckBox();
             this.txbOutrosCilindros = new System.Windows.Forms.TextBox();
             this.txbOutrosMuco = new System.Windows.Forms.TextBox();
+            this.urisedTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.urisedTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.urisedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txbOutrosCristais
             // 
+            this.txbOutrosCristais.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "obs1", true));
             this.txbOutrosCristais.Location = new System.Drawing.Point(149, 297);
             this.txbOutrosCristais.Multiline = true;
             this.txbOutrosCristais.Name = "txbOutrosCristais";
             this.txbOutrosCristais.Size = new System.Drawing.Size(156, 35);
             this.txbOutrosCristais.TabIndex = 309;
             // 
+            // urisedBindingSource
+            // 
+            this.urisedBindingSource.DataMember = "urised";
+            this.urisedBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txbRaca
             // 
+            this.txbRaca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "raca", true));
             this.txbRaca.Location = new System.Drawing.Point(504, 95);
             this.txbRaca.Name = "txbRaca";
             this.txbRaca.Size = new System.Drawing.Size(73, 20);
@@ -118,9 +136,11 @@
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // mskresp
             // 
+            this.mskresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "cpf", true));
             this.mskresp.Location = new System.Drawing.Point(360, 92);
             this.mskresp.Mask = "000.000.000-00";
             this.mskresp.Name = "mskresp";
@@ -139,6 +159,7 @@
             // 
             // mskdata
             // 
+            this.mskdata.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "data", true));
             this.mskdata.Location = new System.Drawing.Point(252, 92);
             this.mskdata.Mask = "00/00/0000";
             this.mskdata.Name = "mskdata";
@@ -148,6 +169,7 @@
             // 
             // txtresp
             // 
+            this.txtresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "responsavel", true));
             this.txtresp.Location = new System.Drawing.Point(528, 374);
             this.txtresp.Name = "txtresp";
             this.txtresp.Size = new System.Drawing.Size(73, 20);
@@ -155,6 +177,7 @@
             // 
             // txtnome
             // 
+            this.txtnome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "nome", true));
             this.txtnome.Location = new System.Drawing.Point(252, 59);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(325, 20);
@@ -170,6 +193,7 @@
             this.Label3.Size = new System.Drawing.Size(120, 31);
             this.Label3.TabIndex = 298;
             this.Label3.Text = "Urinálise";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Label4
             // 
@@ -200,9 +224,11 @@
             this.Label1.Size = new System.Drawing.Size(38, 13);
             this.Label1.TabIndex = 295;
             this.Label1.Text = "Nome:";
+            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // txbBAC
             // 
+            this.txbBAC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "bac", true));
             this.txbBAC.Location = new System.Drawing.Point(60, 255);
             this.txbBAC.Multiline = true;
             this.txbBAC.Name = "txbBAC";
@@ -211,6 +237,7 @@
             // 
             // txbHEM
             // 
+            this.txbHEM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "hem", true));
             this.txbHEM.Location = new System.Drawing.Point(60, 229);
             this.txbHEM.Multiline = true;
             this.txbHEM.Name = "txbHEM";
@@ -219,6 +246,7 @@
             // 
             // txbLEUC
             // 
+            this.txbLEUC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "leuc", true));
             this.txbLEUC.Location = new System.Drawing.Point(60, 203);
             this.txbLEUC.Multiline = true;
             this.txbLEUC.Name = "txbLEUC";
@@ -227,6 +255,7 @@
             // 
             // txbCELS
             // 
+            this.txbCELS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "cels", true));
             this.txbCELS.Location = new System.Drawing.Point(60, 177);
             this.txbCELS.Multiline = true;
             this.txbCELS.Name = "txbCELS";
@@ -459,6 +488,7 @@
             // 
             // txbOutrosCilindros
             // 
+            this.txbOutrosCilindros.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "obs2", true));
             this.txbOutrosCilindros.Location = new System.Drawing.Point(379, 297);
             this.txbOutrosCilindros.Multiline = true;
             this.txbOutrosCilindros.Name = "txbOutrosCilindros";
@@ -467,11 +497,16 @@
             // 
             // txbOutrosMuco
             // 
+            this.txbOutrosMuco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.urisedBindingSource, "obs3", true));
             this.txbOutrosMuco.Location = new System.Drawing.Point(619, 297);
             this.txbOutrosMuco.Multiline = true;
             this.txbOutrosMuco.Name = "txbOutrosMuco";
             this.txbOutrosMuco.Size = new System.Drawing.Size(156, 35);
             this.txbOutrosMuco.TabIndex = 336;
+            // 
+            // urisedTableAdapter
+            // 
+            this.urisedTableAdapter.ClearBeforeFill = true;
             // 
             // UriSed
             // 
@@ -523,6 +558,11 @@
             this.Controls.Add(this.Label1);
             this.Name = "UriSed";
             this.Text = "UriSed";
+            this.Load += new System.EventHandler(this.UriSed_Load);
+            this.Click += new System.EventHandler(this.Label1_Click);
+            this.DoubleClick += new System.EventHandler(this.Label3_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.urisedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,5 +610,8 @@
         private System.Windows.Forms.CheckBox ckbOutrosCilindros;
         internal System.Windows.Forms.TextBox txbOutrosCilindros;
         internal System.Windows.Forms.TextBox txbOutrosMuco;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource urisedBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.urisedTableAdapter urisedTableAdapter;
     }
 }

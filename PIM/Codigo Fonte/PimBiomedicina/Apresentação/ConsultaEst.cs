@@ -15,5 +15,12 @@ namespace PimBiomedicina.Modelo
         {
             InitializeComponent();
         }
+
+        private void ConsultaEst_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'testePimDataSet.estagiario'. Você pode movê-la ou removê-la conforme necessário.
+            this.estagiarioTableAdapter.Fill(this.testePimDataSet.estagiario);
+
+        }
     }
 }

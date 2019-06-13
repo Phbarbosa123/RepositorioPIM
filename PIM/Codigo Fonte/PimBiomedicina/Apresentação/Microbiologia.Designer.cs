@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMicrobiologia));
             this.mskresp = new System.Windows.Forms.MaskedTextBox();
+            this.microbiologiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
             this.Label29 = new System.Windows.Forms.Label();
             this.mskdata = new System.Windows.Forms.MaskedTextBox();
             this.txtresp = new System.Windows.Forms.TextBox();
@@ -55,15 +58,29 @@
             this.txtgram = new System.Windows.Forms.TextBox();
             this.txtmat = new System.Windows.Forms.TextBox();
             this.btnsalvar = new System.Windows.Forms.Button();
+            this.microbiologiaTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.microbiologiaTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.microbiologiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // mskresp
             // 
+            this.mskresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "cpf", true));
             this.mskresp.Location = new System.Drawing.Point(165, 114);
             this.mskresp.Mask = "000.000.000-00";
             this.mskresp.Name = "mskresp";
             this.mskresp.Size = new System.Drawing.Size(88, 20);
             this.mskresp.TabIndex = 262;
+            // 
+            // microbiologiaBindingSource
+            // 
+            this.microbiologiaBindingSource.DataMember = "microbiologia";
+            this.microbiologiaBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Label29
             // 
@@ -77,6 +94,7 @@
             // 
             // mskdata
             // 
+            this.mskdata.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "data", true));
             this.mskdata.Location = new System.Drawing.Point(57, 114);
             this.mskdata.Mask = "00/00/0000";
             this.mskdata.Name = "mskdata";
@@ -86,6 +104,7 @@
             // 
             // txtresp
             // 
+            this.txtresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "responsavel", true));
             this.txtresp.Location = new System.Drawing.Point(302, 114);
             this.txtresp.Name = "txtresp";
             this.txtresp.Size = new System.Drawing.Size(79, 20);
@@ -113,6 +132,7 @@
             // 
             // txtnome
             // 
+            this.txtnome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "nome", true));
             this.txtnome.Location = new System.Drawing.Point(57, 75);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(325, 20);
@@ -128,6 +148,7 @@
             this.Label3.Size = new System.Drawing.Size(173, 31);
             this.Label3.TabIndex = 255;
             this.Label3.Text = "Microbiologia";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Label1
             // 
@@ -138,6 +159,7 @@
             this.Label1.Size = new System.Drawing.Size(38, 13);
             this.Label1.TabIndex = 254;
             this.Label1.Text = "Nome:";
+            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Label11
             // 
@@ -221,6 +243,7 @@
             // 
             // txtbaar
             // 
+            this.txtbaar.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "baar", true));
             this.txtbaar.Location = new System.Drawing.Point(294, 252);
             this.txtbaar.Multiline = true;
             this.txtbaar.Name = "txtbaar";
@@ -229,6 +252,7 @@
             // 
             // txtccol2
             // 
+            this.txtccol2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "ccol2", true));
             this.txtccol2.Location = new System.Drawing.Point(228, 252);
             this.txtccol2.Multiline = true;
             this.txtccol2.Name = "txtccol2";
@@ -237,6 +261,7 @@
             // 
             // txtmicr2
             // 
+            this.txtmicr2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "micr2", true));
             this.txtmicr2.Location = new System.Drawing.Point(161, 252);
             this.txtmicr2.Multiline = true;
             this.txtmicr2.Name = "txtmicr2";
@@ -245,6 +270,7 @@
             // 
             // txtccol
             // 
+            this.txtccol.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "ccol", true));
             this.txtccol.Location = new System.Drawing.Point(95, 252);
             this.txtccol.Multiline = true;
             this.txtccol.Name = "txtccol";
@@ -253,6 +279,7 @@
             // 
             // txtmicr1
             // 
+            this.txtmicr1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "micr1", true));
             this.txtmicr1.Location = new System.Drawing.Point(294, 189);
             this.txtmicr1.Multiline = true;
             this.txtmicr1.Name = "txtmicr1";
@@ -261,6 +288,7 @@
             // 
             // txtgram2
             // 
+            this.txtgram2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "gram1", true));
             this.txtgram2.Location = new System.Drawing.Point(228, 189);
             this.txtgram2.Multiline = true;
             this.txtgram2.Name = "txtgram2";
@@ -269,6 +297,7 @@
             // 
             // txtgram
             // 
+            this.txtgram.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "gram", true));
             this.txtgram.Location = new System.Drawing.Point(161, 189);
             this.txtgram.Multiline = true;
             this.txtgram.Name = "txtgram";
@@ -277,6 +306,7 @@
             // 
             // txtmat
             // 
+            this.txtmat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.microbiologiaBindingSource, "mat", true));
             this.txtmat.Location = new System.Drawing.Point(95, 189);
             this.txtmat.Multiline = true;
             this.txtmat.Name = "txtmat";
@@ -293,6 +323,11 @@
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
+            // 
+            // microbiologiaTableAdapter
+            // 
+            this.microbiologiaTableAdapter.ClearBeforeFill = true;
             // 
             // frmMicrobiologia
             // 
@@ -328,6 +363,11 @@
             this.Controls.Add(this.Label1);
             this.Name = "frmMicrobiologia";
             this.Text = "Microbiologia";
+            this.Load += new System.EventHandler(this.frmMicrobiologia_Load);
+            this.Click += new System.EventHandler(this.Label1_Click);
+            this.DoubleClick += new System.EventHandler(this.Label3_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.microbiologiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,5 +401,8 @@
         internal System.Windows.Forms.TextBox txtgram;
         internal System.Windows.Forms.TextBox txtmat;
         private System.Windows.Forms.Button btnsalvar;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource microbiologiaBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.microbiologiaTableAdapter microbiologiaTableAdapter;
     }
 }

@@ -24,7 +24,9 @@ namespace PimBiomedicina
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            TelaMenuEst tela = new TelaMenuEst();
+            tela.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,8 +36,6 @@ namespace PimBiomedicina
             if (controle.tem)
             {
                 MessageBox.Show("Logado com sucesso");
-                TelaMenuAdm tela = new TelaMenuAdm();
-                tela.ShowDialog();
             }
             else
             {
@@ -47,6 +47,9 @@ namespace PimBiomedicina
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("Entre em contato com seu coordenador!");
+            TelaMenuAdm telaMenuAdm = new TelaMenuAdm();
+            telaMenuAdm.Show();
+            this.Hide();
         }
     }
 }

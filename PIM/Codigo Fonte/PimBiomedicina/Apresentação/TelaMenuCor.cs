@@ -66,8 +66,45 @@ namespace PimBiomedicina
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Hide();
+        }
 
+        private void físicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentação.frmUrinalise frmUrinalise = new Apresentação.frmUrinalise();
+            frmUrinalise.Show();
+        }
+
+        private void químicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentação.UriQui uriQui = new Apresentação.UriQui();
+            uriQui.Show();
+        }
+
+        private void sedimentoscopiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentação.UriSed uriSed = new Apresentação.UriSed();
+            uriSed.Show();
+        }
+
+        private void bioquímicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentação.frmBioquimica frmBioquimica = new Apresentação.frmBioquimica();
+            frmBioquimica.Show();
+        }
+
+        private void herToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentação.frmHematologia frmHematologia = new Apresentação.frmHematologia();
+            frmHematologia.Show();
+        }
+
+        private void microbiologiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Apresentação.frmMicrobiologia frmMicrobiologia = new Apresentação.frmMicrobiologia();
+            frmMicrobiologia.Show();
         }
     }
 }

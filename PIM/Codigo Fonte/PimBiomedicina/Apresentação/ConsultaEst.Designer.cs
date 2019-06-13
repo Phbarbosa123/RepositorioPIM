@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaEst));
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -37,7 +38,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtconnome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
+            this.estagiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estagiarioTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.estagiarioTableAdapter();
+            this.tableAdapterManager = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.TableAdapterManager();
+            this.nomeestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estagiarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -55,7 +65,13 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomeestDataGridViewTextBoxColumn,
+            this.raDataGridViewTextBoxColumn,
+            this.senhaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.estagiarioBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(38, 170);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -116,6 +132,55 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Consulta por nome:";
             // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // estagiarioBindingSource
+            // 
+            this.estagiarioBindingSource.DataMember = "estagiario";
+            this.estagiarioBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // estagiarioTableAdapter
+            // 
+            this.estagiarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.bioquimicaTableAdapter = null;
+            this.tableAdapterManager.estagiarioTableAdapter = this.estagiarioTableAdapter;
+            this.tableAdapterManager.hematologiaTableAdapter = null;
+            this.tableAdapterManager.loginsTableAdapter = null;
+            this.tableAdapterManager.microbiologiaTableAdapter = null;
+            this.tableAdapterManager.pacienteTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = PimBiomedicina.Conexões.TestePimDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.urifisTableAdapter = null;
+            this.tableAdapterManager.uriquiTableAdapter = null;
+            this.tableAdapterManager.urisedTableAdapter = null;
+            // 
+            // nomeestDataGridViewTextBoxColumn
+            // 
+            this.nomeestDataGridViewTextBoxColumn.DataPropertyName = "nome_est";
+            this.nomeestDataGridViewTextBoxColumn.HeaderText = "nome_est";
+            this.nomeestDataGridViewTextBoxColumn.Name = "nomeestDataGridViewTextBoxColumn";
+            this.nomeestDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // raDataGridViewTextBoxColumn
+            // 
+            this.raDataGridViewTextBoxColumn.DataPropertyName = "ra";
+            this.raDataGridViewTextBoxColumn.HeaderText = "ra";
+            this.raDataGridViewTextBoxColumn.Name = "raDataGridViewTextBoxColumn";
+            this.raDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // senhaDataGridViewTextBoxColumn
+            // 
+            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
+            this.senhaDataGridViewTextBoxColumn.HeaderText = "senha";
+            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
+            this.senhaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ConsultaEst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,7 +198,10 @@
             this.Controls.Add(this.label15);
             this.Name = "ConsultaEst";
             this.Text = "ConsultaEst";
+            this.Load += new System.EventHandler(this.ConsultaEst_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estagiarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +217,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtconnome;
         private System.Windows.Forms.Label label1;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource estagiarioBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.estagiarioTableAdapter estagiarioTableAdapter;
+        private Conexões.TestePimDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn raDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
     }
 }

@@ -38,11 +38,14 @@
             this.tsmCadEst = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgendamento = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmExames = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
             this.urináliseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.físicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.químicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sedimentoscopiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
+            this.bioquímicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.herToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.microbiologiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,14 +77,14 @@
             // tsmConPac
             // 
             this.tsmConPac.Name = "tsmConPac";
-            this.tsmConPac.Size = new System.Drawing.Size(180, 22);
+            this.tsmConPac.Size = new System.Drawing.Size(125, 22);
             this.tsmConPac.Text = "&Pacientes";
             this.tsmConPac.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
             // tsmConEst
             // 
             this.tsmConEst.Name = "tsmConEst";
-            this.tsmConEst.Size = new System.Drawing.Size(180, 22);
+            this.tsmConEst.Size = new System.Drawing.Size(125, 22);
             this.tsmConEst.Text = "&Estagiário";
             this.tsmConEst.Click += new System.EventHandler(this.estagiárioToolStripMenuItem1_Click);
             // 
@@ -101,14 +104,14 @@
             // tsmCadPac
             // 
             this.tsmCadPac.Name = "tsmCadPac";
-            this.tsmCadPac.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadPac.Size = new System.Drawing.Size(125, 22);
             this.tsmCadPac.Text = "&Pacientes";
             this.tsmCadPac.Click += new System.EventHandler(this.pacienteToolStripMenuItem_Click);
             // 
             // tsmCadEst
             // 
             this.tsmCadEst.Name = "tsmCadEst";
-            this.tsmCadEst.Size = new System.Drawing.Size(180, 22);
+            this.tsmCadEst.Size = new System.Drawing.Size(125, 22);
             this.tsmCadEst.Text = "&Estagiário";
             this.tsmCadEst.Click += new System.EventHandler(this.estagiárioToolStripMenuItem_Click);
             // 
@@ -124,22 +127,14 @@
             // tsmExames
             // 
             this.tsmExames.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.urináliseToolStripMenuItem});
+            this.urináliseToolStripMenuItem,
+            this.bioquímicaToolStripMenuItem,
+            this.herToolStripMenuItem,
+            this.microbiologiaToolStripMenuItem});
             this.tsmExames.Image = ((System.Drawing.Image)(resources.GetObject("tsmExames.Image")));
             this.tsmExames.Name = "tsmExames";
             this.tsmExames.Size = new System.Drawing.Size(74, 20);
             this.tsmExames.Text = "&Exames";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(724, 1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 23);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // urináliseToolStripMenuItem
             // 
@@ -156,18 +151,53 @@
             this.físicoToolStripMenuItem.Name = "físicoToolStripMenuItem";
             this.físicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.físicoToolStripMenuItem.Text = "Físico";
+            this.físicoToolStripMenuItem.Click += new System.EventHandler(this.físicoToolStripMenuItem_Click);
             // 
             // químicoToolStripMenuItem
             // 
             this.químicoToolStripMenuItem.Name = "químicoToolStripMenuItem";
             this.químicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.químicoToolStripMenuItem.Text = "Químico";
+            this.químicoToolStripMenuItem.Click += new System.EventHandler(this.químicoToolStripMenuItem_Click);
             // 
             // sedimentoscopiaToolStripMenuItem
             // 
             this.sedimentoscopiaToolStripMenuItem.Name = "sedimentoscopiaToolStripMenuItem";
             this.sedimentoscopiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sedimentoscopiaToolStripMenuItem.Text = "Sedimentoscopia";
+            this.sedimentoscopiaToolStripMenuItem.Click += new System.EventHandler(this.sedimentoscopiaToolStripMenuItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(724, 1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 23);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // bioquímicaToolStripMenuItem
+            // 
+            this.bioquímicaToolStripMenuItem.Name = "bioquímicaToolStripMenuItem";
+            this.bioquímicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bioquímicaToolStripMenuItem.Text = "Bioquímica";
+            this.bioquímicaToolStripMenuItem.Click += new System.EventHandler(this.bioquímicaToolStripMenuItem_Click);
+            // 
+            // herToolStripMenuItem
+            // 
+            this.herToolStripMenuItem.Name = "herToolStripMenuItem";
+            this.herToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.herToolStripMenuItem.Text = "Hematologia";
+            this.herToolStripMenuItem.Click += new System.EventHandler(this.herToolStripMenuItem_Click);
+            // 
+            // microbiologiaToolStripMenuItem
+            // 
+            this.microbiologiaToolStripMenuItem.Name = "microbiologiaToolStripMenuItem";
+            this.microbiologiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.microbiologiaToolStripMenuItem.Text = "Microbiologia";
+            this.microbiologiaToolStripMenuItem.Click += new System.EventHandler(this.microbiologiaToolStripMenuItem_Click);
             // 
             // TelaMenuAdm
             // 
@@ -203,5 +233,8 @@
         private System.Windows.Forms.ToolStripMenuItem físicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem químicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sedimentoscopiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bioquímicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem herToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem microbiologiaToolStripMenuItem;
     }
 }

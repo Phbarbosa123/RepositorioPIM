@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBioquimica));
             this.mskresp = new System.Windows.Forms.MaskedTextBox();
+            this.bioquimicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
             this.Label29 = new System.Windows.Forms.Label();
             this.mskdata = new System.Windows.Forms.MaskedTextBox();
             this.txtresp = new System.Windows.Forms.TextBox();
@@ -81,15 +84,29 @@
             this.Label5 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.btnsalvar = new System.Windows.Forms.Button();
+            this.bioquimicaTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.bioquimicaTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.bioquimicaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // mskresp
             // 
+            this.mskresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "cpf", true));
             this.mskresp.Location = new System.Drawing.Point(222, 117);
             this.mskresp.Mask = "000.000.000-00";
             this.mskresp.Name = "mskresp";
             this.mskresp.Size = new System.Drawing.Size(88, 20);
             this.mskresp.TabIndex = 271;
+            // 
+            // bioquimicaBindingSource
+            // 
+            this.bioquimicaBindingSource.DataMember = "bioquimica";
+            this.bioquimicaBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Label29
             // 
@@ -103,6 +120,7 @@
             // 
             // mskdata
             // 
+            this.mskdata.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "data", true));
             this.mskdata.Location = new System.Drawing.Point(114, 117);
             this.mskdata.Mask = "00/00/0000";
             this.mskdata.Name = "mskdata";
@@ -112,6 +130,7 @@
             // 
             // txtresp
             // 
+            this.txtresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "responsavel", true));
             this.txtresp.Location = new System.Drawing.Point(359, 117);
             this.txtresp.Name = "txtresp";
             this.txtresp.Size = new System.Drawing.Size(79, 20);
@@ -139,6 +158,7 @@
             // 
             // txtnome
             // 
+            this.txtnome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "nome", true));
             this.txtnome.Location = new System.Drawing.Point(114, 78);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(325, 20);
@@ -154,6 +174,7 @@
             this.Label3.Size = new System.Drawing.Size(146, 31);
             this.Label3.TabIndex = 264;
             this.Label3.Text = "Bioquímica";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Label1
             // 
@@ -164,9 +185,11 @@
             this.Label1.Size = new System.Drawing.Size(38, 13);
             this.Label1.TabIndex = 263;
             this.Label1.Text = "Nome:";
+            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // txtvhs
             // 
+            this.txtvhs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "phos", true));
             this.txtvhs.Location = new System.Drawing.Point(447, 309);
             this.txtvhs.Multiline = true;
             this.txtvhs.Name = "txtvhs";
@@ -175,6 +198,7 @@
             // 
             // txtrh
             // 
+            this.txtrh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "bhcg", true));
             this.txtrh.Location = new System.Drawing.Point(380, 309);
             this.txtrh.Multiline = true;
             this.txtrh.Name = "txtrh";
@@ -183,6 +207,7 @@
             // 
             // txtabo
             // 
+            this.txtabo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "dhl", true));
             this.txtabo.Location = new System.Drawing.Point(314, 309);
             this.txtabo.Multiline = true;
             this.txtabo.Name = "txtabo";
@@ -191,6 +216,7 @@
             // 
             // txtobs
             // 
+            this.txtobs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "ac_ur", true));
             this.txtobs.Location = new System.Drawing.Point(249, 309);
             this.txtobs.Multiline = true;
             this.txtobs.Name = "txtobs";
@@ -199,6 +225,7 @@
             // 
             // txtoutras
             // 
+            this.txtoutras.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "cpk", true));
             this.txtoutras.Location = new System.Drawing.Point(183, 309);
             this.txtoutras.Multiline = true;
             this.txtoutras.Name = "txtoutras";
@@ -207,6 +234,7 @@
             // 
             // txtmono
             // 
+            this.txtmono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "alb", true));
             this.txtmono.Location = new System.Drawing.Point(116, 309);
             this.txtmono.Multiline = true;
             this.txtmono.Name = "txtmono";
@@ -215,6 +243,7 @@
             // 
             // txtlinat
             // 
+            this.txtlinat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "calcio", true));
             this.txtlinat.Location = new System.Drawing.Point(50, 309);
             this.txtlinat.Multiline = true;
             this.txtlinat.Name = "txtlinat";
@@ -293,6 +322,7 @@
             // 
             // txtbaf
             // 
+            this.txtbaf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "fal", true));
             this.txtbaf.Location = new System.Drawing.Point(447, 244);
             this.txtbaf.Multiline = true;
             this.txtbaf.Name = "txtbaf";
@@ -301,6 +331,7 @@
             // 
             // txteos
             // 
+            this.txteos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "clor", true));
             this.txteos.Location = new System.Drawing.Point(380, 244);
             this.txteos.Multiline = true;
             this.txteos.Name = "txteos";
@@ -309,6 +340,7 @@
             // 
             // txtseg
             // 
+            this.txtseg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "prot", true));
             this.txtseg.Location = new System.Drawing.Point(314, 244);
             this.txtseg.Multiline = true;
             this.txtseg.Name = "txtseg";
@@ -317,6 +349,7 @@
             // 
             // txtbas
             // 
+            this.txtbas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "ferro", true));
             this.txtbas.Location = new System.Drawing.Point(249, 244);
             this.txtbas.Multiline = true;
             this.txtbas.Name = "txtbas";
@@ -325,6 +358,7 @@
             // 
             // txtmet
             // 
+            this.txtmet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "tgp", true));
             this.txtmet.Location = new System.Drawing.Point(183, 244);
             this.txtmet.Multiline = true;
             this.txtmet.Name = "txtmet";
@@ -333,6 +367,7 @@
             // 
             // txtmie
             // 
+            this.txtmie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "tgo", true));
             this.txtmie.Location = new System.Drawing.Point(116, 244);
             this.txtmie.Multiline = true;
             this.txtmie.Name = "txtmie";
@@ -341,6 +376,7 @@
             // 
             // txtleuc
             // 
+            this.txtleuc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "bil_d", true));
             this.txtleuc.Location = new System.Drawing.Point(50, 244);
             this.txtleuc.Multiline = true;
             this.txtleuc.Name = "txtleuc";
@@ -419,6 +455,7 @@
             // 
             // txtplaq
             // 
+            this.txtplaq.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "crea", true));
             this.txtplaq.Location = new System.Drawing.Point(447, 180);
             this.txtplaq.Multiline = true;
             this.txtplaq.Name = "txtplaq";
@@ -427,6 +464,7 @@
             // 
             // txtchcm
             // 
+            this.txtchcm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "dhe", true));
             this.txtchcm.Location = new System.Drawing.Point(380, 180);
             this.txtchcm.Multiline = true;
             this.txtchcm.Name = "txtchcm";
@@ -435,6 +473,7 @@
             // 
             // txthcm
             // 
+            this.txthcm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "vi_dl", true));
             this.txthcm.Location = new System.Drawing.Point(314, 180);
             this.txthcm.Multiline = true;
             this.txthcm.Name = "txthcm";
@@ -443,6 +482,7 @@
             // 
             // txtvmc
             // 
+            this.txtvmc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "ldl", true));
             this.txtvmc.Location = new System.Drawing.Point(249, 180);
             this.txtvmc.Multiline = true;
             this.txtvmc.Name = "txtvmc";
@@ -451,6 +491,7 @@
             // 
             // txtht
             // 
+            this.txtht.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "hdl", true));
             this.txtht.Location = new System.Drawing.Point(183, 180);
             this.txtht.Multiline = true;
             this.txtht.Name = "txtht";
@@ -459,6 +500,7 @@
             // 
             // txthb
             // 
+            this.txthb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "tri", true));
             this.txthb.Location = new System.Drawing.Point(116, 180);
             this.txthb.Multiline = true;
             this.txthb.Name = "txthb";
@@ -467,6 +509,7 @@
             // 
             // txterit
             // 
+            this.txterit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bioquimicaBindingSource, "col", true));
             this.txterit.Location = new System.Drawing.Point(50, 180);
             this.txterit.Multiline = true;
             this.txterit.Name = "txterit";
@@ -482,6 +525,8 @@
             this.Label12.Size = new System.Drawing.Size(36, 13);
             this.Label12.TabIndex = 278;
             this.Label12.Text = "CREA";
+            this.Label12.Click += new System.EventHandler(this.Label12_Click);
+            this.Label12.DoubleClick += new System.EventHandler(this.Label1_Click);
             // 
             // Label9
             // 
@@ -553,6 +598,11 @@
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
+            // 
+            // bioquimicaTableAdapter
+            // 
+            this.bioquimicaTableAdapter.ClearBeforeFill = true;
             // 
             // frmBioquimica
             // 
@@ -614,6 +664,11 @@
             this.Controls.Add(this.Label1);
             this.Name = "frmBioquimica";
             this.Text = "Bioquimica";
+            this.Load += new System.EventHandler(this.frmBioquimica_Load);
+            this.Click += new System.EventHandler(this.Label1_Click);
+            this.DoubleClick += new System.EventHandler(this.Label3_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.bioquimicaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,5 +728,8 @@
         internal System.Windows.Forms.Label Label5;
         internal System.Windows.Forms.Label Label6;
         private System.Windows.Forms.Button btnsalvar;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource bioquimicaBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.bioquimicaTableAdapter bioquimicaTableAdapter;
     }
 }

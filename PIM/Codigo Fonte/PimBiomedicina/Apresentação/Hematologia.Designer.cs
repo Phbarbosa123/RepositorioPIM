@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHematologia));
             this.txtfalci = new System.Windows.Forms.TextBox();
+            this.hematologiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
             this.txtvhs = new System.Windows.Forms.TextBox();
             this.txtrh = new System.Windows.Forms.TextBox();
             this.txtabo = new System.Windows.Forms.TextBox();
@@ -81,24 +84,39 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.btnsalvar = new System.Windows.Forms.Button();
-            this.mskresp = new System.Windows.Forms.MaskedTextBox();
+            this.mskcpf = new System.Windows.Forms.MaskedTextBox();
             this.Label29 = new System.Windows.Forms.Label();
             this.mskdata = new System.Windows.Forms.MaskedTextBox();
             this.txtresp = new System.Windows.Forms.TextBox();
             this.Label4 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
+            this.hematologiaTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.hematologiaTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.hematologiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtfalci
             // 
+            this.txtfalci.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "falci", true));
             this.txtfalci.Location = new System.Drawing.Point(481, 298);
             this.txtfalci.Multiline = true;
             this.txtfalci.Name = "txtfalci";
             this.txtfalci.Size = new System.Drawing.Size(44, 20);
             this.txtfalci.TabIndex = 128;
             // 
+            // hematologiaBindingSource
+            // 
+            this.hematologiaBindingSource.DataMember = "hematologia";
+            this.hematologiaBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtvhs
             // 
+            this.txtvhs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "vhs", true));
             this.txtvhs.Location = new System.Drawing.Point(415, 298);
             this.txtvhs.Multiline = true;
             this.txtvhs.Name = "txtvhs";
@@ -107,6 +125,7 @@
             // 
             // txtrh
             // 
+            this.txtrh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "rh", true));
             this.txtrh.Location = new System.Drawing.Point(348, 298);
             this.txtrh.Multiline = true;
             this.txtrh.Name = "txtrh";
@@ -115,6 +134,7 @@
             // 
             // txtabo
             // 
+            this.txtabo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "abo", true));
             this.txtabo.Location = new System.Drawing.Point(282, 298);
             this.txtabo.Multiline = true;
             this.txtabo.Name = "txtabo";
@@ -123,6 +143,7 @@
             // 
             // txtobs
             // 
+            this.txtobs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "obs", true));
             this.txtobs.Location = new System.Drawing.Point(217, 298);
             this.txtobs.Multiline = true;
             this.txtobs.Name = "txtobs";
@@ -131,6 +152,7 @@
             // 
             // txtoutras
             // 
+            this.txtoutras.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "outras", true));
             this.txtoutras.Location = new System.Drawing.Point(151, 298);
             this.txtoutras.Multiline = true;
             this.txtoutras.Name = "txtoutras";
@@ -139,6 +161,7 @@
             // 
             // txtmono
             // 
+            this.txtmono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "mono", true));
             this.txtmono.Location = new System.Drawing.Point(84, 298);
             this.txtmono.Multiline = true;
             this.txtmono.Name = "txtmono";
@@ -147,6 +170,7 @@
             // 
             // txtlinat
             // 
+            this.txtlinat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "lint_at", true));
             this.txtlinat.Location = new System.Drawing.Point(18, 298);
             this.txtlinat.Multiline = true;
             this.txtlinat.Name = "txtlinat";
@@ -235,6 +259,7 @@
             // 
             // txtlintip
             // 
+            this.txtlintip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "lin_tip", true));
             this.txtlintip.Location = new System.Drawing.Point(481, 233);
             this.txtlintip.Multiline = true;
             this.txtlintip.Name = "txtlintip";
@@ -243,6 +268,7 @@
             // 
             // txtbaf
             // 
+            this.txtbaf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "baf", true));
             this.txtbaf.Location = new System.Drawing.Point(415, 233);
             this.txtbaf.Multiline = true;
             this.txtbaf.Name = "txtbaf";
@@ -251,6 +277,7 @@
             // 
             // txteos
             // 
+            this.txteos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "eos", true));
             this.txteos.Location = new System.Drawing.Point(348, 233);
             this.txteos.Multiline = true;
             this.txteos.Name = "txteos";
@@ -259,6 +286,7 @@
             // 
             // txtseg
             // 
+            this.txtseg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "seg", true));
             this.txtseg.Location = new System.Drawing.Point(282, 233);
             this.txtseg.Multiline = true;
             this.txtseg.Name = "txtseg";
@@ -267,6 +295,7 @@
             // 
             // txtbas
             // 
+            this.txtbas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "bas", true));
             this.txtbas.Location = new System.Drawing.Point(217, 233);
             this.txtbas.Multiline = true;
             this.txtbas.Name = "txtbas";
@@ -275,6 +304,7 @@
             // 
             // txtmet
             // 
+            this.txtmet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "met", true));
             this.txtmet.Location = new System.Drawing.Point(151, 233);
             this.txtmet.Multiline = true;
             this.txtmet.Name = "txtmet";
@@ -283,6 +313,7 @@
             // 
             // txtmie
             // 
+            this.txtmie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "mie", true));
             this.txtmie.Location = new System.Drawing.Point(84, 233);
             this.txtmie.Multiline = true;
             this.txtmie.Name = "txtmie";
@@ -291,6 +322,7 @@
             // 
             // txtleuc
             // 
+            this.txtleuc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "leuc", true));
             this.txtleuc.Location = new System.Drawing.Point(18, 233);
             this.txtleuc.Multiline = true;
             this.txtleuc.Name = "txtleuc";
@@ -379,6 +411,7 @@
             // 
             // txtret
             // 
+            this.txtret.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "ret", true));
             this.txtret.Location = new System.Drawing.Point(481, 169);
             this.txtret.Multiline = true;
             this.txtret.Name = "txtret";
@@ -387,6 +420,7 @@
             // 
             // txtplaq
             // 
+            this.txtplaq.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "plaq", true));
             this.txtplaq.Location = new System.Drawing.Point(415, 169);
             this.txtplaq.Multiline = true;
             this.txtplaq.Name = "txtplaq";
@@ -395,6 +429,7 @@
             // 
             // txtchcm
             // 
+            this.txtchcm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "chcm", true));
             this.txtchcm.Location = new System.Drawing.Point(348, 169);
             this.txtchcm.Multiline = true;
             this.txtchcm.Name = "txtchcm";
@@ -403,6 +438,7 @@
             // 
             // txthcm
             // 
+            this.txthcm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "vmc", true));
             this.txthcm.Location = new System.Drawing.Point(282, 169);
             this.txthcm.Multiline = true;
             this.txthcm.Name = "txthcm";
@@ -411,6 +447,7 @@
             // 
             // txtvmc
             // 
+            this.txtvmc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "vmc", true));
             this.txtvmc.Location = new System.Drawing.Point(217, 169);
             this.txtvmc.Multiline = true;
             this.txtvmc.Name = "txtvmc";
@@ -419,6 +456,7 @@
             // 
             // txtht
             // 
+            this.txtht.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "ht", true));
             this.txtht.Location = new System.Drawing.Point(151, 169);
             this.txtht.Multiline = true;
             this.txtht.Name = "txtht";
@@ -427,6 +465,7 @@
             // 
             // txthb
             // 
+            this.txthb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "hb", true));
             this.txthb.Location = new System.Drawing.Point(84, 169);
             this.txthb.Multiline = true;
             this.txthb.Name = "txthb";
@@ -435,6 +474,7 @@
             // 
             // txterit
             // 
+            this.txterit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "erit", true));
             this.txterit.Location = new System.Drawing.Point(18, 169);
             this.txterit.Multiline = true;
             this.txterit.Name = "txterit";
@@ -523,6 +563,7 @@
             // 
             // txtnome
             // 
+            this.txtnome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "nome", true));
             this.txtnome.Location = new System.Drawing.Point(117, 72);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(325, 20);
@@ -538,6 +579,7 @@
             this.Label3.Size = new System.Drawing.Size(166, 31);
             this.Label3.TabIndex = 77;
             this.Label3.Text = "Hematologia";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Label1
             // 
@@ -548,6 +590,7 @@
             this.Label1.Size = new System.Drawing.Size(38, 13);
             this.Label1.TabIndex = 74;
             this.Label1.Text = "Nome:";
+            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // btnsalvar
             // 
@@ -559,14 +602,16 @@
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
-            // mskresp
+            // mskcpf
             // 
-            this.mskresp.Location = new System.Drawing.Point(225, 111);
-            this.mskresp.Mask = "000.000.000-00";
-            this.mskresp.Name = "mskresp";
-            this.mskresp.Size = new System.Drawing.Size(88, 20);
-            this.mskresp.TabIndex = 253;
+            this.mskcpf.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "cpf", true));
+            this.mskcpf.Location = new System.Drawing.Point(225, 111);
+            this.mskcpf.Mask = "000.000.000-00";
+            this.mskcpf.Name = "mskcpf";
+            this.mskcpf.Size = new System.Drawing.Size(88, 20);
+            this.mskcpf.TabIndex = 253;
             // 
             // Label29
             // 
@@ -580,6 +625,7 @@
             // 
             // mskdata
             // 
+            this.mskdata.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "data", true));
             this.mskdata.Location = new System.Drawing.Point(117, 111);
             this.mskdata.Mask = "00/00/0000";
             this.mskdata.Name = "mskdata";
@@ -589,6 +635,7 @@
             // 
             // txtresp
             // 
+            this.txtresp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hematologiaBindingSource, "responsavel", true));
             this.txtresp.Location = new System.Drawing.Point(362, 111);
             this.txtresp.Name = "txtresp";
             this.txtresp.Size = new System.Drawing.Size(79, 20);
@@ -614,13 +661,17 @@
             this.Label2.TabIndex = 248;
             this.Label2.Text = "Data:";
             // 
+            // hematologiaTableAdapter
+            // 
+            this.hematologiaTableAdapter.ClearBeforeFill = true;
+            // 
             // frmHematologia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(573, 450);
-            this.Controls.Add(this.mskresp);
+            this.Controls.Add(this.mskcpf);
             this.Controls.Add(this.Label29);
             this.Controls.Add(this.mskdata);
             this.Controls.Add(this.txtresp);
@@ -680,6 +731,11 @@
             this.Controls.Add(this.Label1);
             this.Name = "frmHematologia";
             this.Text = "Hematologia";
+            this.Load += new System.EventHandler(this.frmHematologia_Load);
+            this.Click += new System.EventHandler(this.Label1_Click);
+            this.DoubleClick += new System.EventHandler(this.Label3_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.hematologiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -738,11 +794,14 @@
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label1;
         private System.Windows.Forms.Button btnsalvar;
-        private System.Windows.Forms.MaskedTextBox mskresp;
+        private System.Windows.Forms.MaskedTextBox mskcpf;
         internal System.Windows.Forms.Label Label29;
         internal System.Windows.Forms.MaskedTextBox mskdata;
         internal System.Windows.Forms.TextBox txtresp;
         internal System.Windows.Forms.Label Label4;
         internal System.Windows.Forms.Label Label2;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource hematologiaBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.hematologiaTableAdapter hematologiaTableAdapter;
     }
 }

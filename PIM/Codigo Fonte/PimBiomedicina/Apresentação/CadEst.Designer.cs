@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadEst));
             this.label3 = new System.Windows.Forms.Label();
             this.txtra = new System.Windows.Forms.TextBox();
+            this.estagiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testePimDataSet = new PimBiomedicina.Conexões.TestePimDataSet();
             this.txtnome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +42,9 @@
             this.btnalterar = new System.Windows.Forms.Button();
             this.btnsalvar = new System.Windows.Forms.Button();
             this.btnexcluir = new System.Windows.Forms.Button();
+            this.estagiarioTableAdapter = new PimBiomedicina.Conexões.TestePimDataSetTableAdapters.estagiarioTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.estagiarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -54,13 +60,25 @@
             // 
             // txtra
             // 
+            this.txtra.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estagiarioBindingSource, "ra", true));
             this.txtra.Location = new System.Drawing.Point(205, 163);
             this.txtra.Name = "txtra";
             this.txtra.Size = new System.Drawing.Size(100, 20);
             this.txtra.TabIndex = 11;
             // 
+            // estagiarioBindingSource
+            // 
+            this.estagiarioBindingSource.DataMember = "estagiario";
+            this.estagiarioBindingSource.DataSource = this.testePimDataSet;
+            // 
+            // testePimDataSet
+            // 
+            this.testePimDataSet.DataSetName = "TestePimDataSet";
+            this.testePimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtnome
             // 
+            this.txtnome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estagiarioBindingSource, "nome_est", true));
             this.txtnome.Location = new System.Drawing.Point(205, 117);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(100, 20);
@@ -85,6 +103,7 @@
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Nome Estagiário:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -99,8 +118,10 @@
             // 
             // txtsenha
             // 
+            this.txtsenha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estagiarioBindingSource, "senha", true));
             this.txtsenha.Location = new System.Drawing.Point(205, 208);
             this.txtsenha.Name = "txtsenha";
+            this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(100, 20);
             this.txtsenha.TabIndex = 14;
             // 
@@ -114,6 +135,7 @@
             this.btnalterar.Text = "Alterar";
             this.btnalterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.btnalterar_Click);
             // 
             // btnsalvar
             // 
@@ -125,6 +147,7 @@
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // btnexcluir
             // 
@@ -136,6 +159,11 @@
             this.btnexcluir.Text = "Excluir";
             this.btnexcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnexcluir.UseVisualStyleBackColor = true;
+            this.btnexcluir.Click += new System.EventHandler(this.btnexcluir_Click);
+            // 
+            // estagiarioTableAdapter
+            // 
+            this.estagiarioTableAdapter.ClearBeforeFill = true;
             // 
             // CadEst
             // 
@@ -156,6 +184,11 @@
             this.Controls.Add(this.label1);
             this.Name = "CadEst";
             this.Text = "CadEst";
+            this.Load += new System.EventHandler(this.CadEst_Load);
+            this.Click += new System.EventHandler(this.label1_Click);
+            this.DoubleClick += new System.EventHandler(this.label4_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.estagiarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testePimDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +206,8 @@
         private System.Windows.Forms.Button btnalterar;
         private System.Windows.Forms.Button btnsalvar;
         private System.Windows.Forms.Button btnexcluir;
+        private Conexões.TestePimDataSet testePimDataSet;
+        private System.Windows.Forms.BindingSource estagiarioBindingSource;
+        private Conexões.TestePimDataSetTableAdapters.estagiarioTableAdapter estagiarioTableAdapter;
     }
 }

@@ -144,7 +144,11 @@
       <DependentUpon>datapim.xsd</DependentUpon>
     </Compile>
     <Compile Include="Conexões\VerLogin.cs" />
+    <Compile Include="Modelo\absPropriedades.cs" />
+    <Compile Include="Modelo\Cadastro.cs" />
+    <Compile Include="Modelo\Consulta.cs" />
     <Compile Include="Modelo\Controle.cs" />
+    <Compile Include="Modelo\Validacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Apresentação\TelaMenuEst.cs">
@@ -158,6 +162,11 @@
     </Compile>
     <Compile Include="Apresentação\TelaMenuCor.Designer.cs">
       <DependentUpon>TelaMenuCor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexões\TestePimDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestePimDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Apresentação\Agendamento.resx">
       <DependentUpon>Agendamento.cs</DependentUpon>
@@ -235,6 +244,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Conexões\TestePimDataSet.xsc">
+      <DependentUpon>TestePimDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Conexões\TestePimDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestePimDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Conexões\TestePimDataSet.xss">
+      <DependentUpon>TestePimDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
